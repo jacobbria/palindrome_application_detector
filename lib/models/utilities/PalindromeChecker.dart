@@ -16,14 +16,14 @@ Palindromechecker(){
 bool getResults() => isPalindrome;
 
 void inChecker(String input){
-  print("In checker - input: $input");
+ // print("In checker - input: $input");
   normalizeInput(input);
 }
 
 void normalizeInput(String input){
 
 String cleanedString = input.replaceAll(RegExp(r'[^a-zA-Z]'), '');
-print("After cleaning: $cleanedString");
+//print("After cleaning: $cleanedString");
 
 palindromCheck(cleanedString);
 }

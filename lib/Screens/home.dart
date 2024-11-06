@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:palindrome_application_detector/Screens/results.dart';
 import '/models/utilities/PalindromeChecker.dart';
+import '../models/entryHolder.dart';
 
 
 class Home extends StatefulWidget {
   const Home({super.key});
+  
 
 @override
   _HomeState createState() => _HomeState();
@@ -26,6 +28,8 @@ class _HomeState extends State<Home> {
     checker.inChecker(input);
    // print("INPUT: $input");
     _controller.clear();
+
+    EntryHolder.enterEntry(input, checker.getResults());
 
     Navigator.of(context)
     .push(MaterialPageRoute(builder:
