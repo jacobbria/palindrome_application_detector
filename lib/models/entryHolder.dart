@@ -9,7 +9,7 @@ class EntryHolder {
 
   static void enterEntry(String word, bool wasPalindrome){
 
-    print("In EntryHolder enterEntry!");
+    //print("In EntryHolder enterEntry!");
 
     Entry newEntry = Entry(word, wasPalindrome);
 
@@ -21,6 +21,16 @@ class EntryHolder {
 
   static Map<int, Entry> getDatabase(){
     return database;
+  }
+
+  static List<Entry> getEntries(){
+    List<Entry> entries = [];
+
+    database.forEach((key, value){
+      entries.add(value);
+    });
+
+    return entries;
   }
 
 

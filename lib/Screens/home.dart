@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:palindrome_application_detector/Screens/previous.dart';
 import 'package:palindrome_application_detector/Screens/results.dart';
 import '/models/utilities/PalindromeChecker.dart';
 import '../models/entryHolder.dart';
@@ -42,10 +43,17 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Container(
           color: Colors.amber,
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text("Previous Words"),
+              IconButton(
+                onPressed: () {
+                  Navigator.of(context)
+                  .push(MaterialPageRoute(builder:
+                  (context) => PreviousPage()));
+                },
+                icon: Icon(Icons.history),
+                ),
             ],
           ),
         )
@@ -81,8 +89,7 @@ class _HomeState extends State<Home> {
                     filled: true,
                     fillColor: Colors.white,
                     suffixIcon:IconButton(onPressed: () {
-                      _printInput(_controller.text);
-                      
+                      _printInput(_controller.text);    
                     }, icon: const Icon(
                       Icons.search
                      )
